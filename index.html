@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RRPro V5</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="splash">
+    <div class="loader-shell">
+      <div class="logo-badge">RR</div>
+      <div class="loader-circle">
+        <div id="loadPercent">0%</div>
+      </div>
+      <div class="loader-label">Loading RRPro V5</div>
+    </div>
+  </div>
+
+  <main class="app-shell">
+    <section class="top-control">
+      <div class="mini-logo">RRPRO V5</div>
+      <div class="nav-buttons">
+        <button id="backBtn" type="button">Back</button>
+        <button id="forwardBtn" type="button">Forward</button>
+      </div>
+    </section>
+
+    <div id="pathLine" class="path-line"></div>
+
+    <section id="homePage" class="page active">
+      <section class="logo-panel">
+        <div class="fox-logo">
+          <span>RR</span>
+          <strong>PRO V5</strong>
+        </div>
+      </section>
+
+      <section class="home-menu">
+        <button id="yearBtn" class="home-button" type="button">YEAR</button>
+        <button id="driverBtn" class="home-button" type="button">DRIVER</button>
+        <button id="trackBtn" class="home-button" type="button">TRACK</button>
+      </section>
+
+      <button id="versionToggle" class="version-toggle" type="button">v4.2.1</button>
+
+      <section id="versionPanel" class="version-panel">
+        <h2>Version Notes</h2>
+        <div id="versionNotes"></div>
+      </section>
+    </section>
+
+    <section id="yearPage" class="page">
+      <div class="page-card">
+        <h1>Years</h1>
+        <div id="yearList" class="button-grid"></div>
+      </div>
+    </section>
+
+    <section id="driverPage" class="page">
+      <div class="page-card">
+        <h1>Drivers</h1>
+        <input id="driverSearch" class="search-box" placeholder="Search drivers..." />
+        <div id="driverList" class="master-list"></div>
+      </div>
+    </section>
+
+    <section id="trackPage" class="page">
+      <div class="page-card">
+        <h1>Tracks</h1>
+        <input id="trackSearch" class="search-box" placeholder="Search tracks..." />
+        <div id="trackList" class="master-list"></div>
+      </div>
+    </section>
+
+    <section id="yearProfilePage" class="page">
+      <div class="profile-card year-profile">
+        <div class="profile-kicker">Year Profile</div>
+        <h1 id="yearProfileTitle"></h1>
+      </div>
+    </section>
+
+    <section id="driverProfilePage" class="page">
+      <div class="profile-card driver-profile">
+        <div class="profile-kicker">Driver Profile</div>
+
+        <div class="driver-profile-header">
+          <div>
+            <h1 id="driverProfileTitle"></h1>
+            <div id="driverLifeDates" class="driver-life-dates"></div>
+          </div>
+          <div id="driverProfileHometown" class="driver-hometown"></div>
+        </div>
+
+        <div class="driver-stat-grid">
+          <button class="driver-stat-card" type="button" data-driver-stat="starts" draggable="true">
+            <span>Starts</span>
+            <strong id="driverStarts">0</strong>
+          </button>
+          <button class="driver-stat-card" type="button" data-driver-stat="wins" draggable="true">
+            <span>Wins</span>
+            <strong id="driverWins">0</strong>
+          </button>
+          <button class="driver-stat-card" type="button" data-driver-stat="top5s" draggable="true">
+            <span>Top 5s</span>
+            <strong id="driverTop5s">0</strong>
+          </button>
+          <button class="driver-stat-card" type="button" data-driver-stat="top10s" draggable="true">
+            <span>Top 10s</span>
+            <strong id="driverTop10s">0</strong>
+          </button>
+        </div>
+
+        <section class="collapsible-panel driver-history-panel">
+          <div class="collapsible-header">
+            <h2>First / Most Recent</h2>
+            <button class="collapse-toggle" type="button" data-collapse-target="driverHistory">Minimize</button>
+          </div>
+          <div id="driverHistory" class="driver-history collapsible-content"></div>
+        </section>
+
+        <section class="collapsible-panel driver-accolades-panel">
+          <div class="collapsible-header">
+            <h2>Accolades</h2>
+            <button class="collapse-toggle" type="button" data-collapse-target="driverAccolades">Minimize</button>
+          </div>
+          <div id="driverAccolades" class="driver-accolades collapsible-content"></div>
+        </section>
+
+        <section id="driverResultsPanel" class="driver-results-panel collapsible-panel">
+          <div class="results-header-row collapsible-header">
+            <h2 id="driverResultsTitle">Results</h2>
+            <div class="panel-button-row">
+              <button class="collapse-toggle" type="button" data-collapse-target="driverResultsContent">Minimize</button>
+              <button id="driverResultsReset" type="button">Reset</button>
+            </div>
+          </div>
+          <div id="driverResultsContent" class="collapsible-content">
+
+          <div id="driverColumnControls" class="column-controls"></div>
+          <div id="driverResultsGrid" class="results-grid"></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="trackProfilePage" class="page">
+      <div class="profile-card track-profile">
+        <div class="profile-kicker">Track Profile</div>
+        <h1 id="trackProfileTitle"></h1>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
